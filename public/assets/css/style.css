@@ -1,0 +1,46 @@
+/* navbar */
+
+nav.navbar {
+    margin: 0;
+}
+
+.sticky-navbar-container.inflate {
+    height: 60px;
+}
+
+/* Home Page */
+
+#topbanner {
+    padding: 10px;
+}
+
+#topbanner h1 {
+    margin: 0;
+}
+
+#topbanner::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+#topbannerimg {
+    width: 100px;
+    max-width: 50%;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+
+/* Conditional */
+.conditional.loggedin {
+    display: none;
+}
+html.loggedin .conditional.loggedin {
+    display: unset;
+}
+
+html.loggedin .conditional.notloggedin {
+    display: none;
+}
