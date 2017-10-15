@@ -1,4 +1,3 @@
 .vscode
 jsconfig.json
 node_modules
-includes/firebase.html

@@ -5,11 +5,28 @@
 <body>
     @@include('./navbar.html', { "page": "Overview" }) @@include('./bodystart.html')
     <main class="container">
-        <div id="forumpostscomponent" class="forumpostscomponent" data-props="{ 'amount': 12 }">
-            <div class="posts">
-
+        <h1>Overview</h1>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Popular Posts</div>
+            <div class="forumpostscomponent" data-props="{ 'amount': 12, 'sortBy': 'popular' }" >
+                <div class="loader"></div>
+                <ul class="posts list-group">
+    
+                </ul>
             </div>
         </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Recent Posts</div>
+            <div class="forumpostscomponent" data-props="{ 'amount': 28, 'sortBy': 'recent' }" >
+                <div class="loader"></div>
+                <ul class="posts list-group">
+    
+                </ul>
+            </div>
+        </div>
+        
     </main>
     @@include('./bodyend.html')
 </body>

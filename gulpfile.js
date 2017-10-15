@@ -15,6 +15,7 @@ gulp.task('fileinclude', function() {
 gulp.task('run', ['fileinclude']);
 gulp.task('watch', function() {
   gulp.watch('views/**/*.html', ['fileinclude']);
+  gulp.watch('includes/**/*', ['fileinclude']);
 })
 
 gulp.task('default', ['run', 'watch']);

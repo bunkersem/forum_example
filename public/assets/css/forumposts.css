@@ -1,0 +1,9 @@
+.forumpostscomponent {
+    position: relative;
+    min-height: 200px;
+}
+.forumpostscomponent.ready .loader {
+    display: none;
+}
+
+

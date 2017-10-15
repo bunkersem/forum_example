@@ -16,11 +16,6 @@
 
 
 <body>
-    <div id="topbanner">
-        <img id="topbannerimg" src="assets/images/logo.svg" alt="Logo">
-        <h1>%TITLE%</h1>
-        <p class="load">Lorum Ipsum</p>
-    </div>
     <div class="sticky-navbar-container">
     <nav class="navbar navbar-default navbar-sticky-top">
         <div class="container-fluid">
@@ -39,7 +34,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="./">Home<span class="sr-only">(current)</span></a></li>
+                    <li class=""><a href="./">Home<span class="sr-only">(current)</span></a></li>
                     <li class=""><a href="overview">Overview</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -90,46 +85,41 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-</div>
-    <!--[if IE]>
+</div> <!--[if IE]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 <noscript>
         <p>This Website does <strong>Not</strong> work without javascript enabled.</p>
         <p>Please enable javascript in your browser.</p>
 </noscript>
-    <div class="jumbotron">
-        <h1>Hello World</h1>
-        <p>Lorum Ipsum</p>
-        <a href="#" class="btn btn-primary" role="button" type="button">About Me</a>
-    </div>
     <main class="container">
-        Create
-        <br />
-        <form class="create emailandpassword">
-            <div class="form-group">
-                <label for="createemail" class="label-control">email</label>
-                <input id="createemail" name="email" type="text" class="form-control" placeholder="Email" required>
+        <div class="forumpost panel panel-default">
+            <div class="panel-heading">
+                <h2 class="post-title"></h2>
             </div>
-            <div class="form-group">
-                <label for="createpassword" class="label-control">password</label>
-                <input id="createpassword" name="password" type="password" class="form-control" placeholder="Password" required>
+            <div class="panel-body">
+                
+                <p class="post-content lead"></p>
             </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
-        Sigin
-        <br />
-        <form class="signin emailandpassword">
-            <div class="form-group">
-                <label for="signinemail" class="label-control">email</label>
-                <input id="signinemail" name="email" type="text" class="form-control" placeholder="Email" required>
+            <div class="panel-footer">
+                <div>
+                    <label for="post-time">Time: </label>
+                    <time id="post-time" class="post-time"></time>
+                </div>
+                <div>
+                    <label for="post-likes">Likes: </label>
+                    <span id="post-likes" class="post-likes"></span>
+                </div>
+                <div>
+                    <label for="post-views">Views: </label>
+                    <span id="post-views" class="post-views"></span>
+                </div>
+                <div>
+                    <label for="post-user">User: </label>
+                    <span id="post-user" class="post-user"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="signinpassword" class="label-control">password</label>
-                <input id="signinpassword" name="password" type="password" class="form-control" placeholder="Password" required>
-            </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+        </div>
     </main>
     <div style="padding-bottom: 120vh;"></div>
     <!-- Latest compiled and minified CSS -->

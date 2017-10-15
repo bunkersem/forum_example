@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./head.html', { "title": "Home :: Welcome" })
+
+<body>
+    @@include('./navbar.html', { "page": "post" }) @@include('./bodystart.html')
+    <main class="container">
+        <div class="forumpost panel panel-default">
+            <div class="panel-heading">
+                <h2 class="post-title"></h2>
+            </div>
+            <div class="panel-body">
+                
+                <p class="post-content lead"></p>
+            </div>
+            <div class="panel-footer">
+                <div>
+                    <label for="post-time">Time: </label>
+                    <time id="post-time" class="post-time"></time>
+                </div>
+                <div>
+                    <label for="post-likes">Likes: </label>
+                    <span id="post-likes" class="post-likes"></span>
+                </div>
+                <div>
+                    <label for="post-views">Views: </label>
+                    <span id="post-views" class="post-views"></span>
+                </div>
+                <div>
+                    <label for="post-user">User: </label>
+                    <span id="post-user" class="post-user"></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div style="padding-bottom: 120vh;"></div>
+    @@include('./bodyend.html')
+</body>
+
+</html>
