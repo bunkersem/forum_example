@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('./head.html', { "title": "Write Post" })
+
+<body>
+    @@include('./navbar.html', { "page": "write-post" }) @@include('./bodystart.html')
+    <main class="container">
+        <h1>Write Post</h1>
+        <form action="" class="form newforumpost">
+            <div class="form-group">
+                <label class="label-control" for="newpost-title">Title</label>
+                <input class="form-control" type="text" name="title" id="newpost-title" placeholder="Post's Title" required>
+            </div>
+            <div class="form-group">
+                <label class="label-control" for="editor">Content</label>
+                <div id="quillcontainer">
+                    <div id="toolbar">
+                        <button class="ql-bold">Bold</button>
+                        <button class="ql-italic">Italic</button>
+                    </div>
+                    <div id="editor">
+
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+        <p></p>
+        
+
+    </main>
+    <div style="padding-bottom: 120vh;"></div>
+    @@include('./bodyend.html')
+</body>
+
+</html>

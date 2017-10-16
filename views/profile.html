@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('./head.html', { "title": "profile" })
+@@include('./head.html', { "title": "Profile" })
 
 <body>
-    @@include('./navbar.html', { "page": "Profile" }) @@include('./bodystart.html')
+    @@include('./navbar.html', { "page": "profile" }) @@include('./bodystart.html')
     <main class="container">
-        <h1>Profile</h1>
-        <div class="accountprofilecomponent"></div>
+        <div class="accountprofilecomponent panel panel-default">
+            <div class="panel-heading"><h1>Profile</h1></div>
+            <div class="loader"></div>
+            <ul class="list-group">
+                <li class="list-group-item">Email: <span class="email"></span></li>
+                <li class="list-group-item">Email Verified? <span class="email-verified"></li>
+            </ul>
+        </div>
     </main>
     @@include('./bodyend.html')
 </body>

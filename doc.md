@@ -52,6 +52,25 @@ This element is visible when not logged in
 </div>
 ```
 
+#### Forum post essential classes.
+The essential classes for a post:
+```HTML
+<div class="forumpost">
+    <div class="post-title"></div>
+    <div class="post-content"></div>
+    <!-- WIP: -->
+    <span class="post-time"></span>
+    <span class="post-likes"></span>
+    <span class="post-views"></span>
+    <span class="post-user"></span>
+    <button class="commentcreate">Create</button>
+    <!-- ^^^^^^^^^^^^^^^^^^^ -->
+    <div class="post-comments"></div>
+    <div>
+</div>
+
+```
+
 ### common authentication methods
 
 ```javascript

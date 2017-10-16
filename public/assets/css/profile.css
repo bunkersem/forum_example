@@ -1,0 +1,23 @@
+html.isloggedin {
+
+}
+
+.accountprofilecomponent  {
+    position: relative;
+    height: 200px;
+}
+.accountprofilecomponent:not(.ready) * {
+    display: none;
+}
+
+.accountprofilecomponent.ready {
+    height: auto;
+}
+
+.accountprofilecomponent .loader {
+    display: block;
+}
+
+.accountprofilecomponent.ready .loader {
+    display: none;
+}

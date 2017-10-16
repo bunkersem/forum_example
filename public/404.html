@@ -9,7 +9,7 @@
 
     <link rel="manifest" href="manifest.json">
 
-    <title>Home :: Welcome</title>
+    <title>Not Found</title>
     <script src="https://bunkersem.github.io/static_files/js/loader.js"></script>
 
 </head>
@@ -34,7 +34,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="./">Home<span class="sr-only">(current)</span></a></li>
+                    <li class=""><a href="./">Home<span class="sr-only">(current)</span></a></li>
                     <li class=""><a href="overview">Overview</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -50,14 +50,15 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
+                    <li><a href="writepost"><span class="glyphicon glyphicon-plus"><span class="sr-only">(create new post)</span></span></a></li>
                     <li class="conditional loggedin dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span style="font-size: 1.2em;" class="glyphicon glyphicon-user"></span>
+                            <span class="caret"></span>
                             <span class="sr-only">(profile)</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
+                            <li><a href="profile">Profile</a></li>
                             <li><a href="#">Another action</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
@@ -93,6 +94,10 @@
         <p>This Website does <strong>Not</strong> work without javascript enabled.</p>
         <p>Please enable javascript in your browser.</p>
 </noscript>
+<div style="min-height: 20px;"></div>
+
+
+
     <main class="container">
         <h1>404</h1>
         <p>Page not found</p>
@@ -109,13 +114,19 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT"
     crossorigin="anonymous">
 
+<!-- Quill Core -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.3/quill.snow.min.css" integrity="sha256-enySNG6xZz2UmUC+SLGppZenKLIwZpo8MCgZ0s7GrTg="
+    crossorigin="anonymous" />
+
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/forumposts.css">
+<link rel="stylesheet" href="assets/css/profile.css">
 
 <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
 
 <!-- Modernizr -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
 
 <!-- Moment.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js" integrity="sha256-TbOIe++NbC9P3KTtUMJ5wcROlBdnRqrPleLdpPg3xxE="
@@ -128,14 +139,32 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 
+<!-- Quill Editor -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.3/quill.min.js" integrity="sha256-zK8DGB17vdyISQ9HujCZKGQgHEqAHZI5nFydI1Piiic="
+    crossorigin="anonymous"></script>
+
 <script src="assets/js/firebase.js"></script>
 <script src="assets/js/core.js"></script>
+<script src="assets/js/validate.js"></script>
+<script src="assets/js/appstate.js"></script>
 <script src="assets/js/authentication.js"></script>
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/forumpostslist.js"></script>
 <script src="assets/js/forumpost.js"></script>
+<script src="assets/js/newpost.js"></script>
 <script src="assets/js/profile.js"></script>
 
+<script>
+    if ($('#editor').length > 0) {
+        console.log('initializing quill editor');
+        var quill = new Quill('#editor', {
+            modules: { toolbar: '#toolbar' },
+            theme: 'snow',
+            placeholder: 'New post',
+        });
+    }
+
+</script>
 </body>
 
 </html>

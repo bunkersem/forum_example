@@ -49,6 +49,33 @@ $(document).ready(function () {
     });
 });
 
+// Add user to the database user list if not already added.
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        var userRef = firebase.database().ref('users/' + user.uid);
+        userRef.once('value').then(function(snapshot) {
+            // Check if user already exists.
+            if (snapshot.exists() === false) {
+                // Add user to the user list
+                console.log('adding user to the user list');
+                userRef.set({
+                    public: {
+                        displayName: user.displayName,
+                        uid: user.uid,
+                    },
+                    email: user.email,
+                    emailVerified: user.emailVerified,
+                    isAnonymous: user.isAnonymous,
+                    phoneNumber: user.phoneNumber,
+                    photoURL: user.photoURL,
+                    providerData: user.providerData,
+                    providerId: user.providerId,
+                });
+            } 
+        });
+    }
+})
+
 // Conditional
 firebase.auth().onAuthStateChanged(function (user) {
     console.log('onAuthStateChanged', user);

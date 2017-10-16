@@ -9,33 +9,22 @@ firebase.auth().onAuthStateChanged(function (user) {
 function onAuthStateLogin(user) {
     $('.accountprofilecomponent').each(function (index, elem) {
         var $profile = $(elem);
-        $profile.html(createProfileHtml(user));
+        
+        populateProfile(user, elem);
+        $profile.addClass('ready');
     })
 }
 function onAuthStateLoggedOut() {
     $('.accountprofilecomponent').each(function (index, elem) {
         var $profile = $(elem);
-        $profile.html('');
+        // TODO redirect to login page 
     })
 }
 
-function createProfileHtml(user) {
-    var profileHtml = '<ul class="list-group">'
-    + (user.displayName
-        ? '<li class="list-group-item displayname">' + 'Display Name: ' + user.displayName + '</li>'
-        : '')
-    + '<li class="list-group-item email">Email: ' + user.email + '</li>'
-    + '<li class="list-group-item emailverified">Email Verified? <span class="glyphicon ' 
-    + (user.emailVerified 
-        ? 'glyphicon-ok' 
-        : 'glyphicon-remove')
-    + '"></span></li>'
-    + (user.phoneNumber
-        ? '<li class="list-group-item phone-number">Phone Number: ' + user.phoneNumber + '</li>'
-        : '')
-    + (user.photoURL 
-        ? '<img class="list-group-item photourl" src="' + user.photoURL + '" alt="profile picture">'
-        : '')
-    + '</ul>';
-    return profileHtml;
+function populateProfile(user, elem) {
+    $(elem).find('.displayname').text(user.displayName);
+    $(elem).find('.email').text(user.email);
+    $(elem).find('.email-verified').addClass('glyphicon glyphicon-' + (user.emailVerified ? 'ok' : 'remove'));
+    $(elem).find('.phone-number').text(user.phoneNumber);
+    $(elem).find('.phone-photoURL').text(user.photoURL);
 }
