@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('./head.html', { 
-    "title": "Home :: Welcome"
-})
+@@include('./head.html', { "title": "Home :: Welcome" })
 
 <body>
     <div id="topbanner">
@@ -10,42 +8,26 @@
         <h1>%TITLE%</h1>
         <p class="load">Lorum Ipsum</p>
     </div>
-    @@include('./navbar.html', {
-        "page": "index"
-    })
-    @@include('./bodystart.html')
+    @@include('./navbar.html', { "page": "index" }) @@include('./bodystart.html')
     <div class="jumbotron">
-        <h1>Hello World</h1>
-        <p>Lorum Ipsum</p>
-        <a href="#" class="btn btn-primary" role="button" type="button">About Me</a>
+        <div class="container">
+            <h1>Hello World</h1>
+            <p>Lorum Ipsum</p>
+            <a href="about" class="btn btn-primary" role="button" type="button">About</a>
+        </div>
+
     </div>
     <main class="container">
-        Create
-        <br />
-        <form class="create emailandpassword">
-            <div class="form-group">
-                <label for="createemail" class="label-control">email</label>
-                <input id="createemail" name="email" type="text" class="form-control" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <label for="createpassword" class="label-control">password</label>
-                <input id="createpassword" name="password" type="password" class="form-control" placeholder="Password" required>
-            </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
-        Sigin
-        <br />
-        <form class="signin emailandpassword">
-            <div class="form-group">
-                <label for="signinemail" class="label-control">email</label>
-                <input id="signinemail" name="email" type="text" class="form-control" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <label for="signinpassword" class="label-control">password</label>
-                <input id="signinpassword" name="password" type="password" class="form-control" placeholder="Password" required>
-            </div>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+        WIP
+
+
+
+        <div class="conditional notloggedin">
+            <a class="btn btn-primary" href="profile">Login</a>
+        </div>
+        <div class="conditional loggedin">
+            <a class="btn btn-primary" href="profile">Profile</a>
+        </div>
     </main>
     <div style="padding-bottom: 120vh;"></div>
     @@include('./bodyend.html')
