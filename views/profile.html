@@ -3,15 +3,21 @@
 @@include('./head.html', { "title": "Profile" })
 
 <body>
-    @@include('./navbar.html', { "page": "profile" }) @@include('./bodystart.html')
+    @@include('navbar.html', { "page": "profile" }) @@include('./bodystart.html')
     <main class="container">
-        <div class="accountprofilecomponent panel panel-default">
+        <div class="conditional notready loader"></div>
+        <div class="container conditional notloggedin transfade">
+            <div class="col xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                @@include('modules/signups.html')
+            </div>
+        </div>
+        <div class="accountprofilecomponent panel panel-default conditional loggedin transfade">
             <div class="panel-heading"><h1>Profile</h1></div>
             <div class="loader"></div>
-            <ul class="list-group">
-                <li class="list-group-item">Email: <span class="email"></span></li>
-                <li class="list-group-item">Email Verified? <span class="email-verified"></li>
-            </ul>
+            <div class="hidden fa fa-circle-o-notch fa-spin"></div>
+            <div class="panel-body profile-props">
+
+            </div>
         </div>
     </main>
     @@include('./bodyend.html')

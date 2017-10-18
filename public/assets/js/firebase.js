@@ -8,3 +8,5 @@
     messagingSenderId: "467714310792"
   };
   firebase.initializeApp(config);
+  firebase.auth().useDeviceLanguage();
+  firebase.auth().getRedirectResult();

@@ -5,46 +5,67 @@
 <body>
     @@include('./navbar.html', { "page": "post" }) @@include('./bodystart.html')
     <main class="container">
-        <div class="forumpost">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="post-title"></h2>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>Post</h2>
+            </div>
+            <div class="forumpost">
+                <div class="loader"></div>
                 <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="post-title"></h2>
+                        </div>
+                        <div class="panel-body">
+                            <p class="post-content lead"></p>
+                        </div>
+                        <div class="panel-footer">
+                            <div>
+                                <label for="post-time">Time: </label>
+                                <time id="post-time" class="post-time"></time>
+                            </div>
+                            <div>
+                                <label for="post-likes">Likes: </label>
+                                <span id="post-likes" class="post-likes"></span>
+                            </div>
+                            <div>
+                                <label for="post-views">Views: </label>
+                                <span id="post-views" class="post-views"></span>
+                            </div>
+                            <div>
+                                <label for="post-user">User: </label>
+                                <span id="post-user" class="post-user"></span>
+                            </div>
+                        </div>
+                        <div class="panel-panel-default">
+                            <div class="panel-body">
+                                <form action="" class="form commentcreate">
+                                    <div id="quillcontainer">
+                                        <div id="toolbar">
+                                            <button class="ql-bold">Bold</button>
+                                            <button class="ql-italic">Italic</button>
+                                        </div>
+                                        <div id="editor">
 
-                    <p class="post-content lead"></p>
-                </div>
-                <div class="panel-footer">
-                    <div>
-                        <label for="post-time">Time: </label>
-                        <time id="post-time" class="post-time"></time>
+                                        </div>
+                                    </div>
+                                    <small class="remaining text-muted">Remaining: <span class="currchars">0</span>/400</small>
+                                    <p></p>
+                                    <div class="hidden fa fa-circle-o-notch fa-spin"></div>
+                                    <button type="submit" role="button" class="btn btn-primary" 
+                                    data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Placing Comment">
+                                    Place Comment</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="post-likes">Likes: </label>
-                        <span id="post-likes" class="post-likes"></span>
-                    </div>
-                    <div>
-                        <label for="post-views">Views: </label>
-                        <span id="post-views" class="post-views"></span>
-                    </div>
-                    <div>
-                        <label for="post-user">User: </label>
-                        <span id="post-user" class="post-user"></span>
+                    <div class="panel-footer">
+                        <ul class="post-comments">
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="panel-panel-default">
-                <form action="" class="form commentcreate">
-                    <div class="form-group">
-                        <label for="newcomment-content" class="label-control">Content: </label>
-                        <textarea type="text" name="content" id="newcomment-content" class="form-control noresize" rows="4" placeholder="Comment Text"></textarea>
-                    </div>
-                    <button type="submit" role="button" class="btn btn-primary">Place Comment</button>
-                </form>
-            </div>
-            <p></p>
-            <ul class="list-group post-comments">
-            </ul>
+        </div>
         </div>
     </main>
     <div style="padding-bottom: 120vh;"></div>

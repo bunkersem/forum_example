@@ -1,0 +1,73 @@
+
+.signup-providers button {
+    line-height: 28px;
+    width: 100%;
+}
+
+.signup-providers .col {
+    padding: 4px;
+}
+
+.signup-providers .fa {
+    float: left;
+}
+
+.signup-with-email {
+    background: #C5C6C7;
+    border-color: #AFAFB3;
+}
+
+.signup-with-google {
+    background: rgb(250, 86, 84);
+    border-color: rgb(231, 72, 69);
+}
+
+.signup-with-twitter {
+    background: rgb(113, 172, 255);
+    border-color: rgb(87, 145, 228);
+}
+
+.signup-with-facebook {
+    background: rgb(73, 100, 155);
+    border-color: rgb(60, 89, 143);
+}
+
+.signup-with-github {
+    background: rgb(50, 50, 50);
+    border-color: rgb(39, 39, 39);
+}
+
+.text-seperator {
+    padding: 15px 0;
+}
+.text-seperator .text-seperator-h {
+    text-align: center;
+    border-bottom: 3px solid #ccc;
+    line-height: 0.13em;
+    margin: 0 10px;
+}
+
+.text-seperator .text-seperator-h span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+/* .signup-with-email {
+    background: #B8B9BD;
+    border-color: #98989B;
+}
+
+.signup-with-google {
+    background: rgb(250, 67, 62);
+    border-color: rgb(214, 56, 53);
+}
+
+.signup-with-twitter {
+    background: rgb(84, 155, 255);
+    background: rgb(70, 130, 214);
+}
+
+.signup-with-facebook {
+    background: rgb(56, 88, 153);
+    background: rgb(45, 71, 122);
+} */

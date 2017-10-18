@@ -1,0 +1,30 @@
+.forumpost {
+    height: 200px;
+    position: relative;
+}
+.forumpost.ready {
+    height: auto;
+}
+
+.forumpost:not(.ready) * {
+    display: none;
+}
+.forumpost .loader {
+    display: block;
+}
+
+.forumpost.ready .loader {
+    display: none;
+}
+
+.forumpost .post-title {
+    word-break: break-all;
+}
+
+.forumpost .post-content {
+    word-break: break-all;
+}
+
+
+
+

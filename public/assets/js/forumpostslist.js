@@ -23,11 +23,13 @@
     function generateForumPost(post) {
         console.log(post)
         var html = [
-            '<li class="forumpost list-group-item">',
-            '<a href="post?key=' + post._key + '">',
-            '<h1>' + post.title + '</h1>',
-            '<p>' + post.content + '</p>',
+            '<li class="forumpostlist-item list-group-item">',
+            '<a href="post?key=' + encodeURIComponent(post._key) + '">',
+            '<h1>' + escapeHtml(post.title) + '</h1>',
             '</a>',
+            '<div class="forumpostlist-itemcontent">',
+            sanitizeHtml(post.content),
+            '</div>',
             '</li>'
         ].join('');
         return html;

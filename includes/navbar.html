@@ -19,7 +19,7 @@
                     <li class="@@if(page === 'index') {active}"><a href="./">Home<span class="sr-only">(current)</span></a></li>
                     <li class="@@if(page === 'overview') {active}"><a href="overview">Overview</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown (WIP) <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -32,7 +32,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="writepost"><span class="glyphicon glyphicon-plus"><span class="sr-only">(create new post)</span></span></a></li>
+                    <li class="conditional loggedin"><a href="writepost"><span class="glyphicon glyphicon-plus"><span class="sr-only">(create new post)</span></span></a></li>
                     <li class="conditional loggedin dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span style="font-size: 1.2em;" class="glyphicon glyphicon-user"></span>
@@ -41,10 +41,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="profile">Profile</a></li>
-                            <li><a href="#">Another action</a></li>
+                            <li><a href="newpost">New Post</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a onclick="userSignOut()"  href="#">Logout</a></li>
+                            <li><a class="authlogout" href="#">Logout</a></li>
                         </ul>
                     </li>
                 </ul>

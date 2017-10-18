@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="conditional notloggedin col col-xs-12">
+        <form class="create emailandpassword">
+            <div class="form-group">
+                <label for="createemail" class="label-control">Email</label>
+                <input id="createemail" name="email" type="text" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="createpassword" class="label-control">Password</label>
+                <input id="createpassword" name="password" type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <p>&nbsp;</p>
+            <button class="btn btn-primary col col-xs-12" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="conditional loggedin">
+        <h1>You are already loggedin&hellip;</h1>
+    </div>
+</div>

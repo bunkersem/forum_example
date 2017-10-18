@@ -1,3 +1,8 @@
+
+html.loading {
+    user-select: none;
+}
+
 /* navbar */
 
 nav.navbar {
@@ -32,23 +37,56 @@ nav.navbar {
     margin-right: 10px;
 }
 
+.transfade {
+    opacity: 1;
+    transition: opacity 300ms ease-out;
+}
+
+html.ready .conditional.notready {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+}
 
 /* Conditional */
-.conditional.loggedin {
-    display: none;
+html:not(.ready) .conditional.loggedin {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
 }
-html.loggedin .conditional.loggedin {
-    display: unset;
+
+html:not(.loggedin) .conditional.loggedin {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
 }
 
 html.loggedin .conditional.notloggedin {
-    display: none;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+}
+html:not(.ready) .conditional.notloggedin {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
 }
 
 
 
-#quillcontainer #editor {
+
+
+.newforumpost #quillcontainer #editor {
     min-height: 200px;
+}
+
+.commentcreate #quillcontainer #editor {
+    min-height: 120px;
 }
 
 .loader {
@@ -71,4 +109,9 @@ textarea.noresize {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
 }
