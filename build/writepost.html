@@ -9,8 +9,35 @@
 
     <link rel="manifest" href="manifest.json">
 
-    <title>Post</title>
-    <script src="https://bunkersem.github.io/static_files/js/loader.js"></script>
+    <title>Write Post</title>
+    <script>var style = "html.loading { background: #868686; } html.loading::before { content: url(\"data:image/svg+xml;base64,PHN2ZyBpZD0ibG9hZGluZ0FuaW1hdGlvbiIgaGVpZ2h0PSIxMjAiIHdpZHRoPSIxMjAiIA0KICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgDQogICAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjAgMTIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgICA8Y2lyY2xlIGlkPSJjMSIgY3g9IjMwIiBjeT0iNjAiIHI9IjEiIC8+DQogICAgPGNpcmNsZSBpZD0iYzIiIGN4PSI2MCIgY3k9IjYwIiByPSIxIiAvPg0KICAgIDxjaXJjbGUgaWQ9ImMzIiBjeD0iOTAiIGN5PSI2MCIgcj0iMSIgLz4NCiAgICA8c3R5bGU+DQogICAgICAgIGNpcmNsZSB7DQogICAgICAgICAgICBzdHJva2U6ICNmZmY7DQogICAgICAgICAgICBmaWxsOiAjZmZmOw0KICAgICAgICAgICAgc3Ryb2tlLXdpZHRoOiAwOw0KICAgICAgICAgICAgZGlzcGxheTogYWJzb2x1dGU7DQogICAgICAgICAgICBhbmltYXRpb246IHNjYWxlIDYwMG1zIGVhc2UgMHMgaW5maW5pdGUgYWx0ZXJuYXRlOyAgICAgICAgIA0KICAgICAgICB9DQogICAgICAgICNjMSB7DQogICAgICAgICAgICBhbmltYXRpb24tZGVsYXk6IDBzOw0KICAgICAgICB9DQogICAgICAgICNjMiB7DQogICAgICAgICAgICBhbmltYXRpb24tZGVsYXk6IDIwMG1zOw0KICAgICAgICB9DQogICAgICAgICNjMyB7DQogICAgICAgICAgICBhbmltYXRpb24tZGVsYXk6IDQwMG1zOw0KICAgICAgICB9DQogICAgICAgIEBrZXlmcmFtZXMgc2NhbGUgew0KICAgICAgICAgICAgZnJvbSB7IHN0cm9rZS13aWR0aDogMDsgfQ0KICAgICAgICAgICAgdG8geyBzdHJva2Utd2lkdGg6IDIwcHg7IH0NCiAgICAgICAgfQ0KDQogICAgICAgICNsb2FkaW5nQW5pbWF0aW9uIHsNCiAgICAgICAgICAgIA0KICAgICAgICB9DQo8L3N0eWxlPg0KPC9zdmc+DQo=\"); position: fixed; display: block; top: 50%; left: 50%; margin-top: -60px; margin-left: -60px; width: 120px; height: 120px; z-index: 2; } html.loading, html.loading > body { overflow: hidden; } html.loading > body { opacity: 0; }"
+var elem = document.createElement('style');
+elem.innerHTML = style;
+document.head.appendChild(elem);
+var classesStr = document.documentElement.getAttribute('class') || '';
+document.documentElement.setAttribute('class', (classesStr += ' loading').trim());
+window.addEventListener('load', removeLoadingScreen);
+function removeLoadingScreen() {
+    var classes = (document.documentElement.getAttribute('class') || '').split(' ');
+    for (var i = 0; i < classes.length; i++) {
+        if (classes[i] === 'loading')
+            classes[i] = '';
+    }
+    document.documentElement.setAttribute('class', classes.join(' ').trim());
+}</script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+    <script> // Initialize Firebase
+ var config = {
+    apiKey: "AIzaSyDxp3xw3VHNRwk52E790Icm3MeTZRH8qvU",
+    authDomain: "forum-example-7fe97.firebaseapp.com",
+    databaseURL: "https://forum-example-7fe97.firebaseio.com",
+    projectId: "forum-example-7fe97",
+    storageBucket: "",
+    messagingSenderId: "467714310792"
+  };
+  firebase.initializeApp(config);
+  firebase.auth().useDeviceLanguage();
+  firebase.auth().getRedirectResult();</script>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
@@ -32,11 +59,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/forumpostlist.css">
-    <link rel="stylesheet" href="assets/css/forumpost.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
-    <link rel="stylesheet" href="assets/css/signup.css">
+    <link rel="stylesheet" href="assets/styles/main.bundle.min.css">
 
 </head>
 
@@ -123,67 +146,38 @@
 
 
     <main class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2>Post</h2>
-            </div>
-            <div class="forumpost">
-                <div class="loader"></div>
-                <div class="panel-body">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h2 class="post-title"></h2>
+        <div class="conditional loggedin">
+            <h1>Write Post</h1>
+            <form action="" class="form newforumpost">
+                <div class="form-group">
+                    <label class="label-control" for="newpost-title">Title</label>
+                    <input class="form-control" type="text" name="title" id="newpost-title" placeholder="Post's Title" required>
+                </div>
+                <div class="form-group">
+                    <label class="label-control" for="editor">Content</label>
+                    <div id="quillcontainer">
+                        <div id="toolbar">
+                            <button class="ql-bold">Bold</button>
+                            <button class="ql-italic">Italic</button>
                         </div>
-                        <div class="panel-body">
-                            <p class="post-content lead"></p>
-                        </div>
-                        <div class="panel-footer">
-                            <div>
-                                <label for="post-time">Time: </label>
-                                <time id="post-time" class="post-time"></time>
-                            </div>
-                            <div>
-                                <label for="post-likes">Likes: </label>
-                                <span id="post-likes" class="post-likes"></span>
-                            </div>
-                            <div>
-                                <label for="post-views">Views: </label>
-                                <span id="post-views" class="post-views"></span>
-                            </div>
-                            <div>
-                                <label for="post-user">User: </label>
-                                <span id="post-user" class="post-user"></span>
-                            </div>
-                        </div>
-                        <div class="panel-panel-default">
-                            <div class="panel-body">
-                                <form action="" class="form commentcreate">
-                                    <div id="quillcontainer">
-                                        <div id="toolbar">
-                                            <button class="ql-bold">Bold</button>
-                                            <button class="ql-italic">Italic</button>
-                                        </div>
-                                        <div id="editor">
+                        <div id="editor">
 
-                                        </div>
-                                    </div>
-                                    <small class="remaining text-muted">Remaining: <span class="currchars">0</span>/400</small>
-                                    <p></p>
-                                    <div class="hidden fa fa-circle-o-notch fa-spin"></div>
-                                    <button type="submit" role="button" class="btn btn-primary" 
-                                    data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Placing Comment">
-                                    Place Comment</button>
-                                </form>
-                            </div>
                         </div>
-                    </div>
-                    <div class="panel-footer">
-                        <ul class="post-comments">
-                        </ul>
                     </div>
                 </div>
-            </div>
+                <small class="remaining text-muted">Remaining: <span class="currchars">0</span>/1000</small>
+                <p></p>
+                <div class="hidden fa fa-circle-o-notch fa-spin"></div>
+                <button type="submit" class="btn btn-primary" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Placing Comment">
+            Submit</button>
+            </form>
+            <p></p>
         </div>
+        <div class="conditional notloggedin">
+            <div class="jumbotron">
+                <h2>You are not logged in</h2>
+                <a class="btn btn-primary" href="profile">Login</a>
+            </div>
         </div>
     </main>
     <div style="padding-bottom: 120vh;"></div>
@@ -210,11 +204,10 @@
                 <button class="btn btn-primary" type="submit">Login</button>
             </form>
         </div>
-        <div class="row"></div>
+        <div class="clearfix"></div>
         <div class="text-seperator">
             <h4 class="text-seperator-h"><span class="text-uppercase">Or</span></h4>
         </div>
-        <div class="row"></div>
         <div class="col col-xs-12 col-sm-6">
             <button class="btn btn-primary signup-with-google">
                             <div class="fa fa-google fa-2x"></div>
@@ -236,6 +229,12 @@
                             Signup with Github</button>
         </div>
         <div class="clearfix"></div>
+        <p style="margin: 15px 0 0 4px" class="text-info">Dont have an account yet?</p>
+        <div class="col col-xs-12">
+            <button class="col-xs-12 btn btn-primary signup-with-email" data-dismiss="modal" data-toggle="modal" data-target="#signupwithemailmodal">
+                    <div class="fa fa-envelope fa-2x"></div>
+                    Signup with Email</button>
+        </div>
     </div>
     <div class="conditional loggedin">
         <h1>You are already loggedin&hellip;</h1>
@@ -243,12 +242,7 @@
 </div>
             </div>
             <div class="modal-footer">
-                <span class="text-info">Dont have an account yet?</span>
-                <div class="signup-providers">
-                    <button class="col-xs-12 btn btn-primary signup-with-email" data-dismiss="modal" data-toggle="modal" data-target="#signupwithemailmodal">
-                                <div class="fa fa-envelope fa-2x"></div>
-                                Signup with Email</button>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -290,9 +284,6 @@
     </div>
 </div>
 
-
-<script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
-
 <!-- Modernizr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
     crossorigin="anonymous"></script>
@@ -315,20 +306,8 @@
 <!-- Validate.js -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.11.1/validate.min.js"></script>
 
-<!-- sanitize-html -->
-<script src="assets/js/sanitize-html.min.js"></script>
-
-<script src="assets/js/firebase.js"></script>
-<script src="assets/js/core.js"></script>
-<script src="assets/js/validate.js"></script>
-<script src="assets/js/appstate.js"></script>
-<script src="assets/js/authentication.js"></script>
-<script src="assets/js/navbar.js"></script>
-<script src="assets/js/forumpostslist.js"></script>
-<script src="assets/js/forumpost.js"></script>
-<script src="assets/js/newpost.js"></script>
-<script src="assets/js/profile.js"></script>
-<script src="assets/js/signup.js"></script>
+<script src="assets/scripts/sanitize-html.min.js"></script>
+<script src="assets/scripts/main.bundle.min.js"></script>
 
 <script>
     if ($('#editor').length > 0) {
@@ -337,6 +316,23 @@
     }
 
 </script>
+
+    <!-- Modals -->
+
+    <div id="forumpostsubmitteddialog" class="modal fade text-center" data-keyboard="false" data-backdrop="false" tabindex="-1"
+        role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Submitted</h4>
+                </div>
+                <div class="modal-body" style="position: relative; min-height: 300px;">
+                    <p>Please wait while your post is being processed&hellip;</p>
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

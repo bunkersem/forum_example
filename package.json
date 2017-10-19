@@ -4,13 +4,38 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "deploy": "git subtree push --prefix public origin gh-pages"
+    "gh": "git subtree push --prefix build origin gh-pages",
+    "deploy": "gulp prod && git add . && git commit -m \"generic\" && git push origin master && npm run gh",
+    "start": "http-server build -p 8080 -o"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
     "gulp-file-include": "^1.2.0",
-    "gutil": "^1.6.4"
-  }
+    "gulp-if": "^2.0.2",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gutil": "^1.6.4",
+    "postcss": "^6.0.13",
+    "run-sequence": "^2.2.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "safari >= 7"
+  ]
 }
