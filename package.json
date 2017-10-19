@@ -4,8 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "gh": "git subtree push --prefix build origin gh-pages",
-    "deploy": "gulp prod && git add . && git commit -m \"generic\" && git push origin master && npm run gh",
+    "gh-pages": "git subtree push --prefix build origin gh-pages",
+    "deploy": "gulp prod && git add . && git commit -m \"generic\" && git push origin master && npm run gh-pages",
     "start": "http-server build -p 8080 -o"
   },
   "author": "",
@@ -39,3 +39,4 @@
     "safari >= 7"
   ]
 }
+
