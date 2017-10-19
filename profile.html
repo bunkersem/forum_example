@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="manifest" href="manifest.json">
+
+    <title>Profile</title>
+    <script>var style = "html.loading { background: #868686; } html.loading::before { content: url(\"data:image/svg+xml;base64,PHN2ZyBpZD0ibG9hZGluZ0FuaW1hdGlvbiIgaGVpZ2h0PSIxMjAiIHdpZHRoPSIxMjAiIA0KICAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgDQogICAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjAgMTIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCiAgICA8Y2lyY2xlIGlkPSJjMSIgY3g9IjMwIiBjeT0iNjAiIHI9IjEiIC8+DQogICAgPGNpcmNsZSBpZD0iYzIiIGN4PSI2MCIgY3k9IjYwIiByPSIxIiAvPg0KICAgIDxjaXJjbGUgaWQ9ImMzIiBjeD0iOTAiIGN5PSI2MCIgcj0iMSIgLz4NCiAgICA8c3R5bGU+DQogICAgICAgIGNpcmNsZSB7DQogICAgICAgICAgICBzdHJva2U6ICNmZmY7DQogICAgICAgICAgICBmaWxsOiAjZmZmOw0KICAgICAgICAgICAgc3Ryb2tlLXdpZHRoOiAwOw0KICAgICAgICAgICAgZGlzcGxheTogYWJzb2x1dGU7DQogICAgICAgICAgICBhbmltYXRpb246IHNjYWxlIDYwMG1zIGVhc2UgMHMgaW5maW5pdGUgYWx0ZXJuYXRlOyAgICAgICAgIA0KICAgICAgICB9DQogICAgICAgICNjMSB7DQogICAgICAgICAgICBhbmltYXRpb24tZGVsYXk6IDBzOw0KICAgICAgICB9DQogICAgICAgICNjMiB7DQogICAgICAgICAgICBhbmltYXRpb24tZGVsYXk6IDIwMG1zOw0KICAgICAgICB9DQogICAgICAgICNjMyB7DQogICAgICAgICAgICBhbmltYXRpb24tZGVsYXk6IDQwMG1zOw0KICAgICAgICB9DQogICAgICAgIEBrZXlmcmFtZXMgc2NhbGUgew0KICAgICAgICAgICAgZnJvbSB7IHN0cm9rZS13aWR0aDogMDsgfQ0KICAgICAgICAgICAgdG8geyBzdHJva2Utd2lkdGg6IDIwcHg7IH0NCiAgICAgICAgfQ0KDQogICAgICAgICNsb2FkaW5nQW5pbWF0aW9uIHsNCiAgICAgICAgICAgIA0KICAgICAgICB9DQo8L3N0eWxlPg0KPC9zdmc+DQo=\"); position: fixed; display: block; top: 50%; left: 50%; margin-top: -60px; margin-left: -60px; width: 120px; height: 120px; z-index: 2; } html.loading, html.loading > body { overflow: hidden; } html.loading > body { opacity: 0; }"
+var elem = document.createElement('style');
+elem.innerHTML = style;
+document.head.appendChild(elem);
+var classesStr = document.documentElement.getAttribute('class') || '';
+document.documentElement.setAttribute('class', (classesStr += ' loading').trim());
+window.addEventListener('load', removeLoadingScreen);
+function removeLoadingScreen() {
+    var classes = (document.documentElement.getAttribute('class') || '').split(' ');
+    for (var i = 0; i < classes.length; i++) {
+        if (classes[i] === 'loading')
+            classes[i] = '';
+    }
+    document.documentElement.setAttribute('class', classes.join(' ').trim());
+}</script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+    <script> // Initialize Firebase
+ var config = {
+    apiKey: "AIzaSyDxp3xw3VHNRwk52E790Icm3MeTZRH8qvU",
+    authDomain: "forum-example-7fe97.firebaseapp.com",
+    databaseURL: "https://forum-example-7fe97.firebaseio.com",
+    projectId: "forum-example-7fe97",
+    storageBucket: "",
+    messagingSenderId: "467714310792"
+  };
+  firebase.initializeApp(config);
+  firebase.auth().useDeviceLanguage();
+  firebase.auth().getRedirectResult();</script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Flatly theme -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd"
+        crossorigin="anonymous">
+
+    <!-- Bootstrap 3 Datepicker -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT"
+        crossorigin="anonymous">
+
+    <!-- Quill Core -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.3/quill.snow.min.css" integrity="sha256-enySNG6xZz2UmUC+SLGppZenKLIwZpo8MCgZ0s7GrTg="
+        crossorigin="anonymous" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/styles/main.bundle.min.css">
+
+</head>
+
+<body>
+    <div class="sticky-navbar-container">
+    <nav class="navbar navbar-default navbar-sticky-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="./">Home<span class="sr-only">(current)</span></a></li>
+                    <li class=""><a href="overview">Overview</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown (WIP) <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="conditional loggedin"><a href="writepost"><span class="glyphicon glyphicon-plus"><span class="sr-only">(create new post)</span></span></a></li>
+                    <li class="conditional loggedin dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span style="font-size: 1.2em;" class="glyphicon glyphicon-user"></span>
+                            <span class="caret"></span>
+                            <span class="sr-only">(profile)</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile">Profile</a></li>
+                            <li><a href="newpost">New Post</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a class="authlogout" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <form class="conditional notloggedin signin emailandpassword navbar-form navbar-right">
+                    <div class="form-group">
+                        <input id="signinemail" name="email" type="text" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input id="signinpassword" name="password" type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-default">Login</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div> <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+        <p>This Website does <strong>Not</strong> work without javascript enabled.</p>
+        <p>Please enable javascript in your browser.</p>
+</noscript>
+<div style="min-height: 20px;"></div>
+
+
+
+    <main class="container">
+        <div class="conditional notready loader"></div>
+        <div class="container conditional notloggedin transfade">
+            <div class="col xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                <div class="container-fluid">
+    <div class="signup-providers conditional notloggedin">
+        <div class="col col-xs-12">
+            <form class="signin emailandpassword">
+                <div class="form-group">
+                    <label for="signinemail" class="label-control">Email</label>
+                    <input id="signinemail" name="email" type="text" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signinpassword" class="label-control">Password</label>
+                    <input id="signinpassword" name="password" type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+        <div class="text-seperator">
+            <h4 class="text-seperator-h"><span class="text-uppercase">Or</span></h4>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-google">
+                            <div class="fa fa-google fa-2x"></div>
+                            Signup with Google</button>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-twitter">
+                            <div class="fa fa-twitter fa-2x"></div>
+                            Signup with Twitter</button>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-facebook">
+                            <div class="fa fa-facebook-official fa-2x"></div>
+                            Signup with Facebook</button>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-github">
+                            <div class="fa fa-github fa-2x"></div>
+                            Signup with Github</button>
+        </div>
+        <div class="clearfix"></div>
+        <p style="margin: 15px 0 0 4px" class="text-info">Dont have an account yet?</p>
+        <div class="col col-xs-12">
+            <button class="col-xs-12 btn btn-primary signup-with-email" data-dismiss="modal" data-toggle="modal" data-target="#signupwithemailmodal">
+                    <div class="fa fa-envelope fa-2x"></div>
+                    Signup with Email</button>
+        </div>
+    </div>
+    <div class="conditional loggedin">
+        <h1>You are already loggedin&hellip;</h1>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="accountprofilecomponent panel panel-default conditional loggedin transfade">
+            <div class="panel-heading"><h1>Profile</h1></div>
+            <div class="loader"></div>
+            <div class="hidden fa fa-circle-o-notch fa-spin"></div>
+            <div class="panel-body profile-props">
+
+            </div>
+        </div>
+    </main>
+    <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Signup</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+    <div class="signup-providers conditional notloggedin">
+        <div class="col col-xs-12">
+            <form class="signin emailandpassword">
+                <div class="form-group">
+                    <label for="signinemail" class="label-control">Email</label>
+                    <input id="signinemail" name="email" type="text" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signinpassword" class="label-control">Password</label>
+                    <input id="signinpassword" name="password" type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Login</button>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+        <div class="text-seperator">
+            <h4 class="text-seperator-h"><span class="text-uppercase">Or</span></h4>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-google">
+                            <div class="fa fa-google fa-2x"></div>
+                            Signup with Google</button>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-twitter">
+                            <div class="fa fa-twitter fa-2x"></div>
+                            Signup with Twitter</button>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-facebook">
+                            <div class="fa fa-facebook-official fa-2x"></div>
+                            Signup with Facebook</button>
+        </div>
+        <div class="col col-xs-12 col-sm-6">
+            <button class="btn btn-primary signup-with-github">
+                            <div class="fa fa-github fa-2x"></div>
+                            Signup with Github</button>
+        </div>
+        <div class="clearfix"></div>
+        <p style="margin: 15px 0 0 4px" class="text-info">Dont have an account yet?</p>
+        <div class="col col-xs-12">
+            <button class="col-xs-12 btn btn-primary signup-with-email" data-dismiss="modal" data-toggle="modal" data-target="#signupwithemailmodal">
+                    <div class="fa fa-envelope fa-2x"></div>
+                    Signup with Email</button>
+        </div>
+    </div>
+    <div class="conditional loggedin">
+        <h1>You are already loggedin&hellip;</h1>
+    </div>
+</div>
+            </div>
+            <div class="modal-footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="signupwithemailmodal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create New Account</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+    <div class="conditional notloggedin col col-xs-12">
+        <form class="create emailandpassword">
+            <div class="form-group">
+                <label for="createemail" class="label-control">Email</label>
+                <input id="createemail" name="email" type="text" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="createpassword" class="label-control">Password</label>
+                <input id="createpassword" name="password" type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <p>&nbsp;</p>
+            <button class="btn btn-primary col col-xs-12" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="conditional loggedin">
+        <h1>You are already loggedin&hellip;</h1>
+    </div>
+</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modernizr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
+
+<!-- Moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js" integrity="sha256-TbOIe++NbC9P3KTtUMJ5wcROlBdnRqrPleLdpPg3xxE="
+    crossorigin="anonymous"></script>
+
+<!-- Jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+<!-- Quill Editor -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.3/quill.min.js" integrity="sha256-zK8DGB17vdyISQ9HujCZKGQgHEqAHZI5nFydI1Piiic="
+    crossorigin="anonymous"></script>
+
+<!-- Validate.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.11.1/validate.min.js"></script>
+
+<script src="assets/scripts/sanitize-html.min.js"></script>
+<script src="assets/scripts/main.bundle.min.js"></script>
+
+<script>
+    if ($('#editor').length > 0) {
+        console.log('initializing quill editor');
+        
+    }
+
+</script>
+</body>
+
+</html>
